@@ -1,6 +1,6 @@
 # podcast
 test front-end for podcast 
-
+to see build download buildfolder
 
 A small test to see setup for a podcast website, there are a lot still to be done and changed:
 1)design own player
