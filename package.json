@@ -1,0 +1,24 @@
+{
+  "name": "packagejsonsetup",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "node-sass --include-path scss scss/main.scss build/css/style.main.min.css",
+    "build-js": "browserify js/script.js>build/js/script.min.js",
+    "build": "yarn run build-css && yarn run build-js",
+    "server": "cd build && python -m http.server 8888",
+    "start": "nodemon -e js,scss -x \"yarn run build && yarn run server\" --ignore build/"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.3.1",
+    "python": "^0.0.4"
+  },
+  "devDependencies": {
+    "browserify": "^16.2.2",
+    "node-sass": "^4.9.0",
+    "nodemon": "^1.17.5"
+  }
+}

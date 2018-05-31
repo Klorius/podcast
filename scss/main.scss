@@ -1,0 +1,301 @@
+/*vendor*/
+@import "vendor/reset";
+
+/*Project*/
+@import "heading";
+
+@import "colorscheme";
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+body{
+	font-family: "Roboto Slab", serif;
+}
+
+#wrapper{
+	position: relative;
+	display: grid;
+	grid-template-columns: 15% 20% 30% 20% 15%;
+	grid-template-rows: 20% 20% 20% 20% auto auto;
+	width: 100%;
+	height:100%;
+}
+
+.hidden{
+	display: none;
+}
+//socialmedia buttons
+#socialmedia {
+	grid-column-start:5;
+	grid-column-end:6;
+	grid-row-start:1;
+	grid-row-end:2;
+	margin:5px;
+	text-align: right;
+	display: inline-flex;
+}
+.fa {
+	padding:10px;
+	font-size:30px;
+	width:50px;
+	
+	text-align: center;
+	text-decoration: none;
+	margin: 5px 2px;
+
+	&:hover{
+		opacity: 0.7;
+	}
+
+}
+
+.fa-facebook{
+	background-color: #3B5998;
+	color:white;
+}
+
+.fa-instagram{
+	background: #125688;
+	color:white;
+}
+
+.fa-twitter {
+	background: #55ACEE;
+	color: white;
+}
+
+//design boxes
+.box {
+	position: fixed;
+	height: 100px;
+	width: 140px;
+	grid-column-start:1;
+	grid-column-end:2;
+	grid-row-start:2;
+	grid-row-end:3;
+	z-index: -1;
+}
+
+#blueBox{
+	position: fixed;
+	top:50%;
+	left:5%
+}
+
+#greenBox{
+	position: fixed;
+	top:60%;
+	left:7%;
+}
+
+//the popupPodcast boxes
+#popupPodcast{
+	position: fixed;
+	top:30px;
+	left:25%;
+	z-index: 10;
+	width:50%;
+	height:75%;
+}
+#monthlyInfo-block{
+	overflow: auto;
+}
+//img above the audioplayer
+#audioImg{
+	width:100%;
+	text-align: center;
+}
+#record {
+	width:50%;
+	height: 50%;
+}
+
+
+//news popup
+#popupNews {
+	position: fixed;
+	top:30px;
+	left:25%;
+	z-index: 10;
+	width:50%;
+	height:75%;
+	overflow: auto;
+}
+
+//header for ealier episodes
+#earlierEpisodes{
+	grid-column-start:2;
+	grid-column-end:5;
+	grid-row-start:6;
+	grid-row-end:7;
+	width: 100%;
+	height: auto;
+	margin:5px;	
+	text-align: center;
+	font-size: 30px;
+}
+//the earlier podcasts
+#podcastlist-block{
+	grid-column-start:2;
+	grid-column-end:5;
+	grid-row-start:6;
+	grid-row-end:7;
+	width: 100%;
+	height: auto;
+	margin:5px;	
+	
+	
+}
+
+//the individual podcast in a card list
+.card{
+	width:200px;
+	display: inline-block;
+}
+
+.card-container {
+	padding: 2px 16px;
+}
+
+//the podcast player 
+#audioPlayer-block{
+	height: 20px;
+	width: 100%;
+}
+
+#audioPlayer{
+	width: 100%;
+}
+
+//infoblock under audioplayer
+#monthlyInfo-block {
+	margin: 10px;
+	margin-top: 20px;
+}
+.info-block {
+	width:100%;
+	height: auto;
+}
+
+
+//images
+#imageContainer-block{
+	grid-column-start:1;
+	grid-column-end:6;
+	grid-row-start:2;
+	grid-row-end:6;
+	width:100%;
+	height:500px;
+}
+
+#imageContainer{
+	width: 100%;
+	height:100%;
+}
+
+.podcastSlide{
+	max-width: 100%;
+	max-height: 100%;
+	background-size:contain;
+	background-repeat: no-repeat;
+	margin-left:auto;
+	margin-right:auto;
+	
+}
+
+
+//dropdown menu and all its content
+#navbar-block{
+	position: fixed;
+	box-sizing:border-box;
+	display: block;
+	grid-column-start:1;
+	grid-column-end:2;
+	grid-row-start: 2;
+	grid-row-end: 5;
+	padding-left:10px;
+}
+
+//menu "burger"
+#menu{
+	height:20px;
+	padding:10px 0px;
+	grid-column-start:1;
+	grid-column-end:2;
+	grid-row-start: 2;
+	grid-row-end: 5;
+	position: relative;
+	cursor:pointer;
+	display: inline-block;
+	margin-bottom:5px;
+}
+//the three bars in the menu "burger"
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.bar1.change {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.bar2.change {opacity: 0;
+}
+
+.bar3.change {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+//menu items under the menu "burger"
+.navItems {//hides the menu items until menu button is pressed
+	display: none;
+	grid-column-start:1;
+	grid-column-end:2;
+	grid-row-start: 2;
+	grid-row-end: 5;
+	min-width: 50%;
+	z-index: 2;
+	cursor: pointer;
+	overflow: auto;
+
+}
+
+.show {//makes the menu items visible by addding this class through js
+	display: block;
+	grid-column-start:1;
+	grid-column-end:2;
+	color:black;
+	text-decoration: none;
+	padding: 10px 12px;
+	z-index:10;
+}
+
+.button {
+  border: 0;
+  background: transparent;
+  box-sizing: border-box;
+  width: 0;
+  height: 74px;
+  margin:5px;
+  border-color: transparent transparent transparent rgba(10,10,10,1);
+  transition: 100ms all ease;
+  cursor: pointer;
+
+  // play state
+  border-style: solid;
+  border-width: 37px 0 37px 60px;
+
+  &.paused {
+    border-style: double;
+    border-width: 0px 0 0px 60px;
+  }
+
+  &:hover {
+    border-color: transparent transparent transparent #404040;
+  }
+}
